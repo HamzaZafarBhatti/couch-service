@@ -20,22 +20,22 @@
             <li>
                 <a href="javascript:void(0);" class="have-submenu">
                     <span class="icon-thumbnail"><i class="dripicons-folder"></i></span>
-                    <span class="title">Categories</span>
+                    <span class="title">Couch Services</span>
                 </a>
                 <!--Submenu-->
                 <ul class="sub-menu">
 
                     <li>
-                        <a href="../controller/categories.php">
+                        <a href="../controller/couch.php">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
                             <span class="title">Show All</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="../controller/new_category.php">
+                        <a href="../controller/add_couch.php">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
-                            <span class="title">New Category</span>
+                            <span class="title">Couches Available</span>
                         </a>
                     </li>
 

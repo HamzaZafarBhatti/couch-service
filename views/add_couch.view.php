@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="block-heading d-flex align-items-center title-pages">
-                            <h5 class="text-truncate">New User</h5>
+                            <h5 class="text-truncate">Couch Availables</h5>
                         </div>
                     </div>
 
@@ -27,24 +27,30 @@
                                     <div class="form-group col-md-12">
                                         <div class="block col-md-12" style="padding-bottom: 35px">
 
-                                            <label class="control-label">Name</label>
-                                            <input type="text" value="" placeholder="Name" name="name" id="name" class="form-control" required="">
+                                            <label class="control-label">User ID</label>
+                                            <input type="text" value="" placeholder="User ID" name="user_id" id="user_id" class="form-control" required="">
                                             <label class="control-label">Username</label>
                                             <input type="text" value="" placeholder="Username" name="username" id="username" class="form-control" required="">
+                                            <label class="control-label">Couch Images</label>
+                                            <input type="images" value="" placeholder="Images of Couch" name="couch_img" id="couch)img" class="form-control" required="">
+                                            <label class="control-label">Wish List Places</label>
+                                            <input type="images" value="" placeholder="Wish List Places" name="wish_list" id="wish_list" class="form-control" required="">
                                             <label class="control-label">Email</label>
                                             <input type="email" value="" placeholder="Email" name="email" id="email" class="form-control" required="">
-                                            <label class="control-label">Password</label>
-                                            <input type="password" value="" placeholder="Password" name="password" id="password" class="form-control" required="">
+                                            <label class="control-label">Available</label>
+                                            <input type="text" value="" placeholder="Available " name="available" id="available" class="form-control" required="">
+                                            <label class="control-label">From Date</label>
+                                            <input type="text" value="" placeholder="From Date" name="from_date" id="from_date" class="form-control" required="">
+                                            <label class="control-label">To Date</label>
+                                            <input type="text" value="" placeholder="To Date" name="to_date" id="to_date" class="form-control" required="">
                                             <label class="control-label">Address</label>
                                             <input type="text" value="" placeholder="Address" name="address" id="address" class="form-control" required="">
-                                            <label class="control-label">Phone No.</label>
-                                            <input type="text" value="" placeholder="PhoneNo" name="phone" id="phone" class="form-control" required="">
                                             <label class="control-label">City</label>
                                             <input type="text" value="" placeholder="City" name="city" id="city" class="form-control" required="">
-                                            <label class="control-label">State</label>
-                                            <input type="text" value="" placeholder="State" name="state" id="state" class="form-control" required="">
                                             <label class="control-label">Country</label>
                                             <input type="text" value="" placeholder="Country" name="country" id="country" class="form-control" required="">
+                                            <br><br>
+                                            <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
                                             <br><br>    
                                             <button type="submit" class="btn btn-primary">Save</button>
 

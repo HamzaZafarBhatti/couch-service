@@ -63,11 +63,12 @@ function id_user($id_user)
     return (int)cleardata($id_user);
 }
 
-function get_user_per_id($connect, $id_user)
+function get_user_by_id($connect, $user_id)
 {
-    $sentence = $connect->query("SELECT * FROM users WHERE id = $id_user");
-    $sentence = $sentence->fetch();
-    return ($sentence) ? $sentence : false;
+    $sql = "SELECT * FROM users WHERE id = '$user_id'";
+    $result = mysqli_query($connect, $sql);
+    $user = mysqli_fetch_assoc($result);
+    return $user ?? false;
 }
 
 function get_user_by_email($connect, $email)
@@ -76,6 +77,13 @@ function get_user_by_email($connect, $email)
     $result = mysqli_query($connect, $sql);
     $user = mysqli_fetch_assoc($result);
     return $user ?? false;
+}
+
+function delete_user($connect, $id)
+{
+    $sql = "DELETE FROM users where id='$id'";
+    $result = mysqli_query($connect, $sql);
+    return $result ?? false;
 }
 
 

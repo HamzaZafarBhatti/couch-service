@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title">
-                            <h5>Users</h5>
+                            <h5>Couch Surfing</h5>
                         </div>
                     </div>
 

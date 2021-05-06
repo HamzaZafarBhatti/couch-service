@@ -22,31 +22,33 @@
 
                             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="needs-validation">
 
+                            <input type="hidden" name="id" value="<?php echo $user['id'] ?>">
+
 
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <div class="block col-md-12" style="padding-bottom: 35px">
 
                                             <label class="control-label">Name</label>
-                                            <input type="text" value="" placeholder="Name" name="name" id="name" class="form-control" required="">
+                                            <input type="text" placeholder="Name" name="name" value="<?php echo $user['name'] ?>" id="name" class="form-control" required="">
                                             <label class="control-label">Username</label>
-                                            <input type="text" value="" placeholder="Username" name="username" id="username" class="form-control" required="">
+                                            <input type="text" placeholder="Username" name="username" value="<?php echo $user['username'] ?>" id="username" class="form-control" required="">
                                             <label class="control-label">Email</label>
-                                            <input type="email" value="" placeholder="Email" name="email" id="email" class="form-control" required="">
+                                            <input type="email" placeholder="Email" name="email" value="<?php echo $user['email'] ?>" id="email" class="form-control" required="">
                                             <label class="control-label">Password</label>
-                                            <input type="password" value="" placeholder="Password" name="password" id="password" class="form-control" required="">
+                                            <input type="password" placeholder="Password" name="password" id="password" class="form-control" >
                                             <label class="control-label">Address</label>
-                                            <input type="text" value="" placeholder="Address" name="address" id="address" class="form-control" required="">
+                                            <input type="text" placeholder="Address" name="address" value="<?php echo $user['address'] ?>" id="address" class="form-control" required="">
                                             <label class="control-label">Phone No.</label>
-                                            <input type="text" value="" placeholder="PhoneNo" name="phone" id="phone" class="form-control" required="">
+                                            <input type="text" placeholder="PhoneNo" name="phone" value="<?php echo $user['phone'] ?>" id="phone" class="form-control" required="">
                                             <label class="control-label">City</label>
-                                            <input type="text" value="" placeholder="City" name="city" id="city" class="form-control" required="">
+                                            <input type="text" placeholder="City" name="city" value="<?php echo $user['city'] ?>" id="city" class="form-control" required="">
                                             <label class="control-label">State</label>
-                                            <input type="text" value="" placeholder="State" name="state" id="state" class="form-control" required="">
+                                            <input type="text" placeholder="State" name="state" value="<?php echo $user['state'] ?>" id="state" class="form-control" required="">
                                             <label class="control-label">Country</label>
-                                            <input type="text" value="" placeholder="Country" name="country" id="country" class="form-control" required="">
+                                            <input type="text" placeholder="Country" name="country" value="<?php echo $user['country'] ?>" id="country" class="form-control" required="">
                                             <br><br>    
-                                            <button type="submit" class="btn btn-primary">Save</button>
+                                            <button type="submit" class="btn btn-primary">Update</button>
 
                                         </div>
                                     </div>
@@ -73,10 +75,6 @@
                 email: {
                     required: true
                 },
-                password: {
-                    required: true,
-                    minlength: 6
-                },
                 address: {
                     required: true,
                 },
@@ -90,10 +88,6 @@
                 },
                 email: {
                     required: "Email is required field"
-                },
-                password: {
-                    required: "Password is required field",
-                    minlength: "Password should be at least 6 characters"
                 },
                 address: {
                     required: "Confirm Password is required field",
