@@ -25,7 +25,7 @@
     <script src="../assets/js/sweetalert.js"></script>
     <script src="../assets/js/fileuploader.min.js"></script>
     <script src="../assets/js/jquery.uploadPreview.js"></script>
-    <script src="../assets/plugins/tinymce/tinymce.min.js"></script>
+    <!-- <script src="../assets/plugins/tinymce/tinymce.min.js"></script> -->
     <script src="../assets/js/jquery.mswitch.js"></script>
     <script src="../assets/js/header.js"></script>
 

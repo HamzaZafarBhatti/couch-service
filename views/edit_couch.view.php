@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="block-heading d-flex align-items-center title-pages">
-                            <h5 class="text-truncate">User Updation</h5>
+                            <h5 class="text-truncate">Couch Updation</h5>
                         </div>
                     </div>
 
@@ -22,34 +22,34 @@
 
                             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="needs-validation">
 
-                            <input type="hidden" name="id" value="<?php echo $user['id'] ?>">
-
 
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <div class="block col-md-12" style="padding-bottom: 35px">
+                                            <span>
+                                            <label class="control-label">Couch Images</label>
+                                            <input type="file" value="<?php echo $user['couch_img'] ?>" placeholder="Images of Couch" name="couch_img" id="couch_img" multiple  required="">
 
-                                            <label class="control-label">Name</label>
-                                            <input type="text" placeholder="Name" name="name" value="<?php echo $user['name'] ?>" id="name" class="form-control" required="">
-                                            <label class="control-label">Username</label>
-                                            <input type="text" placeholder="Username" name="username" value="<?php echo $user['username'] ?>" id="username" class="form-control" required="">
-                                            <label class="control-label">Email</label>
-                                            <input type="email" placeholder="Email" name="email" value="<?php echo $user['email'] ?>" id="email" class="form-control" required="">
-                                            <label class="control-label">Password</label>
-                                            <input type="password" placeholder="Password" name="password" id="password" class="form-control" >
+                                            <label class="control-label">Wish List Places</label>
+                                            <input type="file" value="<?php echo $user['wish_list'] ?>" placeholder="Wish List Places" name="wish_list" id="wish_list" multiple  required="">
+                                            </span>
+                                            <br><br>
+                                            <label class="control-label">Available</label>
+                                            <input type="text" value="<?php echo $user['is_available'] ?>" placeholder="Available " name="is_available" id="is_available" class="form-control" required="">
+                                            <label class="control-label">From Date</label>
+                                            <input type="datetime-local" value="<?php echo $user['from_date'] ?>" placeholder="From Date" name="from_date" id="from_date" class="form-control" required="">
+                                            <label class="control-label">To Date</label>
+                                            <input type="datetime-local" value="<?php echo $user['to_date'] ?>" placeholder="To Date" name="to_date" id="to_date" class="form-control" required="">
                                             <label class="control-label">Address</label>
-                                            <input type="text" placeholder="Address" name="address" value="<?php echo $user['address'] ?>" id="address" class="form-control" required="">
-                                            <label class="control-label">Phone No.</label>
-                                            <input type="text" placeholder="PhoneNo" name="phone" value="<?php echo $user['phone'] ?>" id="phone" class="form-control" required="">
+                                            <input type="text" value="<?php echo $user['address'] ?>" placeholder="Address" name="address" id="address" class="form-control" required="">
                                             <label class="control-label">City</label>
-                                            <input type="text" placeholder="City" name="city" value="<?php echo $user['city'] ?>" id="city" class="form-control" required="">
-                                            <label class="control-label">State</label>
-                                            <input type="text" placeholder="State" name="state" value="<?php echo $user['state'] ?>" id="state" class="form-control" required="">
+                                            <input type="text" value="<?php echo $user['city'] ?>" placeholder="City" name="city" id="city" class="form-control" required="">
                                             <label class="control-label">Country</label>
-                                            <input type="text" placeholder="Country" name="country" value="<?php echo $user['country'] ?>" id="country" class="form-control" required="">
+                                            <input type="text" value="<?php echo $user['country'] ?>" placeholder="Country" name="country" id="country" class="form-control" required="">
+                                            <br><br>
+                                            <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
                                             <br><br>    
                                             <button type="submit" class="btn btn-primary">Update</button>
-
                                         </div>
                                     </div>
                                 </div>

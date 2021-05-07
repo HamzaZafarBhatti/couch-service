@@ -24,10 +24,10 @@ if (isset($_SESSION['username'])) {
 	$status = 1;
 
 
-	$errors = '';
+	$errors = ''
     $id = $_POST['id'];
     $sql = "UPDATE users SET username='$username' WHERE id='$id'";
-    // $sql= "INSERT INTO users (username, email, address, phone, city, state, country, password ,status) VALUES ('$username', '$email', '$address' , '$phone', '$city', '$state', '$country', '$password', '$status')";
+    //$sql= "INSERT INTO users (username, email, address, phone, city, state, country, password ,status) VALUES ('$username', '$email', '$address' , '$phone', '$city', '$state', '$country', '$password', '$status')";
     $result = $connection->query($sql);
 
 	// echo json_encode($result);

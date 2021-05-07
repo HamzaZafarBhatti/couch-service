@@ -9,7 +9,7 @@ if (isset($_SESSION['username'])) {
 
 	$errors = '';
 
-	$users = get_all_users($connection);
+	$users = get_all_couch($connection);
 	if (empty($users)) {
 		$errors .= '<div style="padding: 0px 15px;">No data found</div>';
 	}

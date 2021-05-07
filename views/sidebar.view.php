@@ -35,7 +35,7 @@
                     <li>
                         <a href="../controller/add_couch.php">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
-                            <span class="title">Couches Available</span>
+                            <span class="title">Offer Couch</span>
                         </a>
                     </li>
 

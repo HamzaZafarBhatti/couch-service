@@ -24,11 +24,14 @@ if (isset($_SESSION['username'])) {
 	$wish_list = filter_var($_POST['wish_list'], FILTER_SANITIZE_STRING);
 
 	$errors = '';
-    $sql= "INSERT INTO couch (is_available, from_date, to_date, address, city, country, couch_img, wish_list) VALUES ('$is_available', '$from_date', '$to_date', '$address', '$city', '$country', '$couch_img', '$wish_list')";
+	//echo json_encode($_POST);
+	//die();
+    $id = $_POST['id'];
+    $sql = "UPDATE couch SET is_available='$is_available' WHERE id='$id'";
     $result = $connection->query($sql);
 
-	//echo json_encode($result);
-	//die();
+	echo json_encode($result);
+	die();
 
 	if ($result !== false) {
 		header('Location: ' . SITE_URL . '/controller/couch.php');
@@ -37,11 +40,15 @@ if (isset($_SESSION['username'])) {
 	}
     }
 
-    $title_page = 'Couch Surfing';
+    $title_page = 'Couch Updation';
+
+    $user_id = $_GET['id'];
+    $user = get_couch_by_id($connection, $user_id);
+
 
     require '../views/header.view.php';
     require '../views/navbar.view.php';
-    require '../views/add_couch.view.php';
+    require '../views/edit_couch.view.php';
     require '../views/footer.view.php';
 } else {
     header('Location: ' . SITE_URL . '/controller/login.php');

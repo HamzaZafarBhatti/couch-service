@@ -26,23 +26,20 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <div class="block col-md-12" style="padding-bottom: 35px">
-
-                                            <label class="control-label">User ID</label>
-                                            <input type="text" value="" placeholder="User ID" name="user_id" id="user_id" class="form-control" required="">
-                                            <label class="control-label">Username</label>
-                                            <input type="text" value="" placeholder="Username" name="username" id="username" class="form-control" required="">
+                                            <span>
                                             <label class="control-label">Couch Images</label>
-                                            <input type="images" value="" placeholder="Images of Couch" name="couch_img" id="couch)img" class="form-control" required="">
+                                            <input type="file" value="" placeholder="Images of Couch" name="couch_img" id="couch_img" multiple  required="">
+
                                             <label class="control-label">Wish List Places</label>
-                                            <input type="images" value="" placeholder="Wish List Places" name="wish_list" id="wish_list" class="form-control" required="">
-                                            <label class="control-label">Email</label>
-                                            <input type="email" value="" placeholder="Email" name="email" id="email" class="form-control" required="">
+                                            <input type="file" value="" placeholder="Wish List Places" name="wish_list" id="wish_list" multiple  required="">
+                                            </span>
+                                            <br><br>
                                             <label class="control-label">Available</label>
-                                            <input type="text" value="" placeholder="Available " name="available" id="available" class="form-control" required="">
+                                            <input type="text" value="" placeholder="Available " name="is_available" id="is_available" class="form-control" required="">
                                             <label class="control-label">From Date</label>
-                                            <input type="text" value="" placeholder="From Date" name="from_date" id="from_date" class="form-control" required="">
+                                            <input type="datetime-local" value="" placeholder="From Date" name="from_date" id="from_date" class="form-control" required="">
                                             <label class="control-label">To Date</label>
-                                            <input type="text" value="" placeholder="To Date" name="to_date" id="to_date" class="form-control" required="">
+                                            <input type="datetime-local" value="" placeholder="To Date" name="to_date" id="to_date" class="form-control" required="">
                                             <label class="control-label">Address</label>
                                             <input type="text" value="" placeholder="Address" name="address" id="address" class="form-control" required="">
                                             <label class="control-label">City</label>
@@ -53,7 +50,6 @@
                                             <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
                                             <br><br>    
                                             <button type="submit" class="btn btn-primary">Save</button>
-
                                         </div>
                                     </div>
                                 </div>
@@ -79,10 +75,6 @@
                 email: {
                     required: true
                 },
-                password: {
-                    required: true,
-                    minlength: 6
-                },
                 address: {
                     required: true,
                 },
@@ -96,10 +88,6 @@
                 },
                 email: {
                     required: "Email is required field"
-                },
-                password: {
-                    required: "Password is required field",
-                    minlength: "Password should be at least 6 characters"
                 },
                 address: {
                     required: "Confirm Password is required field",

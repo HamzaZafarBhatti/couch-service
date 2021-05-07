@@ -39,19 +39,35 @@
                                     <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%" style="border-radius: 5px;">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                <th>ID</th>
+                                                <th>user_ID</th>
                                                 <th>Username</th>
                                                 <th>Email</th>
-                                                <th>Status</th>
+                                                <th>Available</th>
+                                                <th>From Date</th>
+                                                <th>To Date</th>
+                                                <th>Address</th>
+                                                <th>City</th>
+                                                <th>Country</th>
+                                                <th>Couch Images</th>
+                                                <th>Wish list Places</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Id</th>
+                                                <th>ID</th>
+                                                <th>user_ID</th>
                                                 <th>Username</th>
                                                 <th>Email</th>
-                                                <th>Status</th>
+                                                <th>Available</th>
+                                                <th>From Date</th>
+                                                <th>To Date</th>
+                                                <th>Address</th>
+                                                <th>City</th>
+                                                <th>Country</th>
+                                                <th>Couch Images</th>
+                                                <th>Wish list Places</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </tfoot>
@@ -60,11 +76,19 @@
                                             <?php foreach ($users as $user) : ?>
                                                 <tr>
                                                     <td><?php echo $user['id']; ?></td>
+                                                    <td><?php echo $user['user_id'];?></td>
                                                     <td><?php echo $user['username']; ?></td>
                                                     <td><?php echo $user['email']; ?></td>
-                                                    <td><?php echo $user['status'] ? 'Active' : 'In active' ?></td>
+                                                    <td><?php echo $user['is_available'];?></td>
+                                                    <td><?php echo $user['from_date']; ?></td>
+                                                    <td><?php echo $user['to_date'];?></td>
+                                                    <td><?php echo $user['address']; ?></td>
+                                                    <td><?php echo $user['city']; ?></td>
+                                                    <td><?php echo $user['country'];?></td>
+                                                    <td><?php echo $user['couch_img']; ?></td>
+                                                    <td><?php echo $user['wish_list'];?></td>
                                                     <td>
-                                                        <a href="../controller/edit_user.php?id=<?php echo $user['id']; ?>" style="font-size: 14px;color: #000000;"><i class="fa fa-cog"></i></a>
+                                                        <a href="../controller/edit_couch.php?id=<?php echo $user['id']; ?>" style="font-size: 14px;color: #000000;"><i class="fa fa-cog"></i></a>
                                                         <a onclick="alertdelete_<?php echo $user['id']; ?>();" style="cursor: pointer;font-size: 14px;color: #000000;"><i class="fa fa-trash-o"></i></a>
                                                         <script type="text/javascript">
                                                             function alertdelete_<?php echo $user['id']; ?>() {
@@ -78,7 +102,7 @@
                                                                     confirmButtonText: "Yes, delete it!",
                                                                     closeOnConfirm: false
                                                                 }, function() {
-                                                                    window.location.href = "<?php echo SITE_URL ?>/controller/delete_user.php?id=<?php echo $user['id']; ?>"
+                                                                    window.location.href = "<?php echo SITE_URL ?>/controller/delete_couch.php?id=<?php echo $user['id']; ?>"
                                                                 });
                                                             }
                                                         </script>

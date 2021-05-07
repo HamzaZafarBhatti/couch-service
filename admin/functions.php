@@ -41,6 +41,30 @@ function number_pages($items_per_page, $connect)
     return $number_pages;
 }
 
+/////////////////////////////////////////////////////////////////////////////////// COUCH
+
+function get_all_couch($connect)
+{
+    $sql = "SELECT * FROM couch";
+    $result = mysqli_query($connect, $sql);
+    return $result ?? false;
+}
+
+function get_couch_by_id($connect, $user_id)
+{
+    $sql = "SELECT * FROM couch WHERE id = '$user_id'";
+    $result = mysqli_query($connect, $sql);
+    $user = mysqli_fetch_assoc($result);
+    return $user ?? false;
+}
+
+function delete_couch($connect, $id)
+{
+    $sql = "DELETE FROM couch where id='$id'";
+    $result = mysqli_query($connect, $sql);
+    return $result ?? false;
+}
+
 /////////////////////////////////////////////////////////////////////////////////// USERS
 
 function get_all_users($connect)
@@ -49,6 +73,7 @@ function get_all_users($connect)
     $result = mysqli_query($connect, $sql);
     return $result ?? false;
 }
+
 
 function number_users($connect)
 {

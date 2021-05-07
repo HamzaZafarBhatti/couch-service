@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2021 at 10:18 PM
+-- Generation Time: May 08, 2021 at 12:42 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -32,7 +32,7 @@ CREATE TABLE `couch` (
   `user_id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `is_available` tinyint(1) NOT NULL,
+  `is_available` varchar(255) NOT NULL,
   `from_date` datetime NOT NULL,
   `to_date` datetime NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -41,6 +41,13 @@ CREATE TABLE `couch` (
   `couch_img` longblob NOT NULL,
   `wish_list` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `couch`
+--
+
+INSERT INTO `couch` (`id`, `user_id`, `username`, `email`, `is_available`, `from_date`, `to_date`, `address`, `city`, `country`, `couch_img`, `wish_list`) VALUES
+(9, 0, '', '', 'yes', '2021-05-07 18:18:00', '2021-05-08 18:18:00', 'abc street', 'iowa', 'usa', 0x612e6a7067, 0x622e6a7067);
 
 -- --------------------------------------------------------
 
@@ -144,7 +151,7 @@ ALTER TABLE `user_has_roles`
 -- AUTO_INCREMENT for table `couch`
 --
 ALTER TABLE `couch`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -156,7 +163,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user_has_roles`
