@@ -114,6 +114,7 @@
 
 <script>
     $(document).ready(function() {
+        $('#roles_nav').addClass('active');
         var validator = $('#needs-validation').validate({
             rules: {
                 name: {

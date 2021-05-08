@@ -13,7 +13,7 @@
 
                     <div class="col-12">
                         <div class="section-title">
-                            <h4>Sections</h4>
+                            <h4>Home</h4>
                         </div>
                     </div>
 

@@ -62,6 +62,9 @@
 
 <script>
     $(document).ready(function() {
+        $('#users_nav').addClass('show');
+        $('#users_nav').siblings('.sub-menu').addClass('d-block');
+        $('#add_user_nav').addClass('active');
         var validator = $('#needs-validation').validate({
             rules: {
                 username: {

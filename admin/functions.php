@@ -45,22 +45,36 @@ function number_pages($items_per_page, $connect)
 
 function get_all_couch($connect)
 {
-    $sql = "SELECT * FROM couch";
+    $sql = "SELECT * FROM couches";
     $result = mysqli_query($connect, $sql);
     return $result ?? false;
 }
 
-function get_couch_by_id($connect, $user_id)
+function get_couch_by_id($connect, $id)
 {
-    $sql = "SELECT * FROM couch WHERE id = '$user_id'";
+    $sql = "SELECT * FROM couches WHERE id = '$id'";
     $result = mysqli_query($connect, $sql);
-    $user = mysqli_fetch_assoc($result);
-    return $user ?? false;
+    $couch = mysqli_fetch_assoc($result);
+    return $couch ?? false;
+}
+
+function get_couch_images($connect, $id)
+{
+    $sql = "SELECT * FROM couch_images where couch_id='$id'";
+    $result = mysqli_query($connect, $sql);
+    return $result ?? false;
+}
+
+function delete_couch_image($connect, $id)
+{
+    $sql = "DELETE FROM couch_images WHERE id = '$id'";
+    $result = mysqli_query($connect, $sql);
+    return $result ?? false;
 }
 
 function delete_couch($connect, $id)
 {
-    $sql = "DELETE FROM couch where id='$id'";
+    $sql = "DELETE FROM couches where id='$id'";
     $result = mysqli_query($connect, $sql);
     return $result ?? false;
 }

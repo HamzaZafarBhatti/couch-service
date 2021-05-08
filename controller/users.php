@@ -10,8 +10,8 @@ if (isset($_SESSION['username'])) {
 	$errors = '';
 
 	$users = get_all_users($connection);
-	if (empty($users)) {
-		$errors .= '<div style="padding: 0px 15px;">No data found</div>';
+	if ($users == false) {
+		$errors .= $connection->error;
 	}
 
 	$title_page = 'Users';

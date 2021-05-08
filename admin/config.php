@@ -28,10 +28,5 @@ $email_config = array(
 );
 
 $items_config = array(
-    
-    'items_per_page' => '8',
     'images_folder' => 'images/'
 );
-
-
-?>

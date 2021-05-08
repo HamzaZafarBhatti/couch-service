@@ -11,20 +11,26 @@ if (isset($_SESSION['userid'])) {
     $errors = '';
 
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        $errors = '';
+        // echo json_encode($_GET);
+        // die();
+        $id = $_GET['id'];
 
+		$couch_images = get_couch_images($connection, $id);
+		foreach ($couch_images as $couch) {
+			if (file_exists("../" . $items_config['images_folder'] . $couch['image'])) {
+				unlink("../" . $items_config['images_folder'] . $couch['image']);
+			}
+			delete_couch_image($connection, $couch['id']);
+		}
 
-	$errors = '';
-    //echo json_encode($_GET);
-    //die();
-    $id = $_GET['id'];
-    
-    $result = delete_couch($connection, $id);
+        $result = delete_couch($connection, $id);
 
-	if ($result !== false) {
-		header('Location: ' . SITE_URL . '/controller/couch.php');
-	} else {
-		$errors .= $connection->error;
-	}
+        if ($result !== false) {
+            header('Location: ' . SITE_URL . '/controller/couches.php');
+        } else {
+            $errors .= $connection->error;
+        }
     }
 } else {
     header('Location: ' . SITE_URL . '/controller/login.php');

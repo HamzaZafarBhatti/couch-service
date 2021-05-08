@@ -9,19 +9,20 @@ if (isset($_SESSION['userid'])) {
 
 	$errors = '';
 
-	$users = get_all_couch($connection);
-	if (empty($users)) {
-		$errors .= '<div style="padding: 0px 15px;">No data found</div>';
+	$couches = get_all_couch($connection);
+
+	if ($couches) {
+		$errors .= $connection->error;
 	}
 
-	$title_page = 'Couch Surfing';
+	$title_page = 'Couches';
 	// $users_total = number_users($connection);
 	// echo json_encode($users);
 	// die();
 
 	require '../views/header.view.php';
 	require '../views/navbar.view.php';
-	require '../views/couch.view.php';
+	require '../views/couches.view.php';
 	require '../views/footer.view.php';
 } else {
 	header('Location: ' . SITE_URL . '/controller/login.php');

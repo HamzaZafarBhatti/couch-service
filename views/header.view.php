@@ -29,6 +29,7 @@
     <script src="../assets/js/jquery.uploadPreview.js"></script>
     <!-- <script src="../assets/plugins/tinymce/tinymce.min.js"></script> -->
     <script src="../assets/js/jquery.mswitch.js"></script>
+<!-- <script src="../assets/js/jquery.fileupload.js"></script> -->
     <!-- <script src="../assets/js/header.js"></script> -->
 
 </head>

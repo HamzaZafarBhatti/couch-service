@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2021 at 11:15 AM
+-- Generation Time: May 08, 2021 at 06:34 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `couches` (
   `id` int(11) NOT NULL,
+  `description` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `is_available` tinyint(1) DEFAULT 0,
   `address` varchar(255) NOT NULL,
@@ -36,12 +37,17 @@ CREATE TABLE `couches` (
   `country` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `couches`
+-- Table structure for table `couch_images`
 --
 
-INSERT INTO `couches` (`id`, `user_id`, `is_available`, `address`, `city`, `country`) VALUES
-(9, 0, 0, 'abc street', 'iowa', 'usa');
+CREATE TABLE `couch_images` (
+  `id` int(11) NOT NULL,
+  `couch_id` int(11) NOT NULL,
+  `image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -121,9 +127,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `name`, `role_id`, `password`, `is_online`, `phone`, `address`, `city`, `state`, `country`, `status`, `created_on`) VALUES
-(6, 'admin', 'admin@admin.com', 'Admin', 1, '$2y$10$4gc.hzRTtrDoM2spJ9lzYuSg3ko5qfc4HcoUYqQ9NKN4yd4VjUgCq', 0, NULL, NULL, NULL, NULL, NULL, 1, '2021-05-08 09:10:41'),
-(16, 'traveller', 'user@traveller.com', 'Saif Ijaz', 2, '$2y$10$8eJz89P1EkK1j.neZQV1A./7VUl.0ppsDKoJeRFcPVrF3dfUkw8zq', 1, NULL, NULL, NULL, NULL, NULL, 1, '2021-05-08 09:10:32'),
-(23, 'Host', 'user@host.com', 'Hamza Bhatti', 3, '$2y$10$FX0geObdEQgPLZikjcMRFushBvI3M2sUXu8NlQzbIiJjI42PlCkei', 1, '03330952454', 'Abcd Street', 'Jhelum', 'Punjab', 'Pakistan', 1, '2021-05-08 09:13:37');
+(6, 'admin', 'admin@admin.com', 'Admin', 1, '$2y$10$4gc.hzRTtrDoM2spJ9lzYuSg3ko5qfc4HcoUYqQ9NKN4yd4VjUgCq', 1, NULL, NULL, NULL, NULL, NULL, 1, '2021-05-08 10:04:44'),
+(16, 'traveller', 'user@traveller.com', 'Saif Ijaz', 2, '$2y$10$8eJz89P1EkK1j.neZQV1A./7VUl.0ppsDKoJeRFcPVrF3dfUkw8zq', 0, NULL, NULL, NULL, NULL, NULL, 1, '2021-05-08 10:05:04'),
+(23, 'Host', 'user@host.com', 'Hamza Bhatti', 3, '$2y$10$FX0geObdEQgPLZikjcMRFushBvI3M2sUXu8NlQzbIiJjI42PlCkei', 0, '03330952454', 'Abcd Street', 'Jhelum', 'Punjab', 'Pakistan', 1, '2021-05-08 10:04:39');
 
 --
 -- Indexes for dumped tables
@@ -133,6 +139,12 @@ INSERT INTO `users` (`id`, `username`, `email`, `name`, `role_id`, `password`, `
 -- Indexes for table `couches`
 --
 ALTER TABLE `couches`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `couch_images`
+--
+ALTER TABLE `couch_images`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -163,7 +175,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `couches`
 --
 ALTER TABLE `couches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `couch_images`
+--
+ALTER TABLE `couch_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `messages`

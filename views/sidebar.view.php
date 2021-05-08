@@ -18,38 +18,38 @@
         <ul class="menu-items custom-scroll mCustomScrollbar _mCS_1"><div id="mCSB_1" class="mCustomScrollBox mCS-dark mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
 
             <li>
-                <a href="javascript:void(0);" class="have-submenu">
-                    <span class="icon-thumbnail"><i class="dripicons-folder"></i></span>
+                <a href="javascript:void(0);" class="have-submenu" id="couches_nav">
+                    <span class="icon-thumbnail"><i class="dripicons-store"></i></span>
                     <span class="title">Couch Services</span>
                 </a>
                 <!--Submenu-->
                 <ul class="sub-menu">
 
                     <li>
-                        <a href="../controller/couches.php">
+                        <a href="../controller/couches.php" id="all_couches_nav">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
                             <span class="title">Show All</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="../controller/add_couch.php">
+                        <a href="../controller/add_couch.php" id="add_couch_nav">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
-                            <span class="title">Offer Couch</span>
+                            <span class="title">Add Couch</span>
                         </a>
                     </li>
 
                 </ul>
             </li>
             <li>
-                <a href="../controller/messages.php">
+                <a href="../controller/messages.php" id="messages_nav">
                     <span class="icon-thumbnail"><i class="dripicons-message"></i></span>
                     <span class="title">Messages</span>
                 </a>
             </li>
 
             <li>
-                <a href="javascript:void(0);" class="have-submenu">
+                <a href="javascript:void(0);" class="have-submenu" id="users_nav">
                     <span class="icon-thumbnail"><i class="dripicons-user-group"></i></span>
                     <span class="title">Users</span>
                 </a>
@@ -57,14 +57,14 @@
                 <ul class="sub-menu">
 
                     <li>
-                        <a href="../controller/users.php">
+                        <a href="../controller/users.php" id="all_users_nav">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
                             <span class="title">Show All</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="../controller/add_user.php">
+                        <a href="../controller/add_user.php" id="add_user_nav">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
                             <span class="title">New User</span>
                         </a>
@@ -73,7 +73,7 @@
                 </ul>
             </li>
             <li>
-                <a href="../controller/roles.php">
+                <a href="../controller/roles.php" id="roles_nav">
                     <span class="icon-thumbnail"><i class="dripicons-user-id"></i></span>
                     <span class="title">Roles</span>
                 </a>

@@ -10,8 +10,8 @@ if (isset($_SESSION['userid'])) {
 	$errors = '';
 
 	$roles = get_all_roles($connection);
-	if (empty($roles)) {
-		$errors .= '<div style="padding: 0px 15px;">No data found</div>';
+	if ($roles == false) {
+		$errors .= $connection->error;
 	}
 
 	$title_page = 'Roles';

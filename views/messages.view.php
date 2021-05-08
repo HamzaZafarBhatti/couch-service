@@ -39,6 +39,7 @@
 
 <script>
     $(document).ready(function() {
+        $('#messages_nav').addClass('active');
         get_hosts_and_travellers();
         setInterval(function() {
             get_hosts_and_travellers();

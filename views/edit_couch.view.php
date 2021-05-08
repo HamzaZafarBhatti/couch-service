@@ -13,42 +13,46 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="block-heading d-flex align-items-center title-pages">
-                            <h5 class="text-truncate">Couch Updation</h5>
+                            <h5 class="text-truncate">Update Couch</h5>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-block mb-4">
 
-                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="needs-validation">
-
-
+                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" id="needs-validation">
+                            <input type="hidden" name="id" value="<?php echo $couch['id'] ?>">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <div class="block col-md-12" style="padding-bottom: 35px">
-                                            <span>
-                                            <label class="control-label">Couch Images</label>
-                                            <input type="file" value="<?php echo $user['couch_img'] ?>" placeholder="Images of Couch" name="couch_img" id="couch_img" multiple  required="">
-
-                                            <label class="control-label">Wish List Places</label>
-                                            <input type="file" value="<?php echo $user['wish_list'] ?>" placeholder="Wish List Places" name="wish_list" id="wish_list" multiple  required="">
-                                            </span>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label class="control-label">Address</label>
+                                                    <input type="text" value="<?php echo $couch['address'] ?>" placeholder="Address" name="address" id="address" class="form-control">
+                                                </div>
+                                                <div class="col-3">
+                                                    <label class="control-label">City</label>
+                                                    <input type="text" value="<?php echo $couch['city'] ?>" placeholder="City" name="city" id="city" class="form-control">
+                                                </div>
+                                                <div class="col-3">
+                                                    <label class="control-label">Country</label>
+                                                    <input type="text" value="<?php echo $couch['country'] ?>" placeholder="Country" name="country" id="country" class="form-control">
+                                                </div>
+                                                <div class="col-6">
+                                                    <label class="control-label">Available</label>
+                                                    <select name="is_available" id="is_available" class="form-control">
+                                                        <option value="1" <?php echo $couch['is_available'] ? 'selected' : ''; ?>>Yes</option>
+                                                        <option value="0" <?php echo $couch['is_available'] ? '' : 'selected'; ?>>No</option>
+                                                    </select>
+                                                    <label class="control-label">Description</label>
+                                                    <textarea rows="4" cols="50" name="description" class="form-control"><?php echo $couch['description'] ?></textarea>
+                                                </div>
+                                                <div class="col-6">
+                                                    <label class="control-label">Images</label>
+                                                    <input type="file" name="images" accept="image/*" multiple>
+                                                </div>
+                                            </div>
                                             <br><br>
-                                            <label class="control-label">Available</label>
-                                            <input type="text" value="<?php echo $user['is_available'] ?>" placeholder="Available " name="is_available" id="is_available" class="form-control" required="">
-                                            <label class="control-label">From Date</label>
-                                            <input type="datetime-local" value="<?php echo $user['from_date'] ?>" placeholder="From Date" name="from_date" id="from_date" class="form-control" required="">
-                                            <label class="control-label">To Date</label>
-                                            <input type="datetime-local" value="<?php echo $user['to_date'] ?>" placeholder="To Date" name="to_date" id="to_date" class="form-control" required="">
-                                            <label class="control-label">Address</label>
-                                            <input type="text" value="<?php echo $user['address'] ?>" placeholder="Address" name="address" id="address" class="form-control" required="">
-                                            <label class="control-label">City</label>
-                                            <input type="text" value="<?php echo $user['city'] ?>" placeholder="City" name="city" id="city" class="form-control" required="">
-                                            <label class="control-label">Country</label>
-                                            <input type="text" value="<?php echo $user['country'] ?>" placeholder="Country" name="country" id="country" class="form-control" required="">
-                                            <br><br>
-                                            <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
-                                            <br><br>    
                                             <button type="submit" class="btn btn-primary">Update</button>
                                         </div>
                                     </div>
@@ -64,33 +68,40 @@
 
 <script>
     $(document).ready(function() {
+        $('#couches_nav').addClass('show');
+        $('#couches_nav').siblings('.sub-menu').addClass('d-block');
+        $('#all_couches_nav').addClass('active');
+        $('input:file').fileuploader({
+            extensions: ['jpg', 'png', 'jpeg', 'gif'],
+            addMore: true,
+        });
         var validator = $('#needs-validation').validate({
             rules: {
-                username: {
-                    required: true
-                },
-                name: {
-                    required: true
-                },
-                email: {
-                    required: true
-                },
                 address: {
+                    required: true
+                },
+                city: {
+                    required: true
+                },
+                country: {
+                    required: true
+                },
+                description: {
                     required: true,
                 },
             },
             messages: {
-                username: {
-                    required: "Username is required field"
-                },
-                name: {
-                    required: "Name is required field"
-                },
-                email: {
-                    required: "Email is required field"
-                },
                 address: {
-                    required: "Confirm Password is required field",
+                    required: "Address is required field"
+                },
+                city: {
+                    required: "City is required field"
+                },
+                country: {
+                    required: "Country is required field"
+                },
+                description: {
+                    required: "Description is required field",
                 },
             },
             errorPlacement: function(error, element) {
