@@ -19,13 +19,14 @@ if (isset($_SESSION['userid'])) {
 
 		$is_available = filter_var($_POST['is_available'], FILTER_SANITIZE_STRING);
 		$address = filter_var($_POST['address'], FILTER_SANITIZE_STRING);
+		$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
 		$city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
 		$country = filter_var($_POST['country'], FILTER_SANITIZE_STRING);
 		$description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
 		$user_id = $_SESSION['userid'];
 
 		$errors = '';
-		$sql = "INSERT INTO couches (is_available, address, city, country, description, user_id) VALUES ('$is_available', '$address', '$city', '$country', '$description', '$user_id')";
+		$sql = "INSERT INTO couches (is_available, address, title, city, country, description, user_id) VALUES ('$is_available', '$address', '$title', '$city', '$country', '$description', '$user_id')";
 		$result = $connection->query($sql);
 
 		if ($result !== false) {

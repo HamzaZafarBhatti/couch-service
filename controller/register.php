@@ -30,8 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// die();
 
 	if ($result !== false) {
+		$_SESSION['username'] = $user['username'];
 		$_SESSION['userid'] = $user['id'];
 		$_SESSION['useremail'] = $user['email'];
+		$_SESSION['roleid'] = $user['role_id'];
 		header('Location: ' . SITE_URL . '/controller/home.php');
 	} else {
 		$errors .= $connection->error;

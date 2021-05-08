@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2021 at 06:34 PM
+-- Generation Time: May 08, 2021 at 08:54 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -24,11 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `couch_id` int(11) NOT NULL,
+  `date_from` datetime NOT NULL,
+  `date_to` datetime NOT NULL,
+  `created_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `couches`
 --
 
 CREATE TABLE `couches` (
   `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `is_available` tinyint(1) DEFAULT 0,
@@ -63,20 +79,6 @@ CREATE TABLE `messages` (
   `status` tinyint(1) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `messages`
---
-
-INSERT INTO `messages` (`id`, `to_user_id`, `from_user_id`, `message`, `status`, `timestamp`) VALUES
-(2, 16, 6, 'Hi!', 1, '2021-05-08 08:36:24'),
-(3, 16, 6, 'Nice', 1, '2021-05-08 08:36:52'),
-(4, 16, 6, 'Checking\n', 1, '2021-05-08 08:37:17'),
-(5, 16, 6, 'WEW\n', 1, '2021-05-08 08:38:17'),
-(6, 6, 16, 'Hi thanks for messaging me\n', 1, '2021-05-08 09:00:39'),
-(7, 16, 6, 'No problem', 1, '2021-05-08 09:00:46'),
-(8, 16, 23, 'Yo bro\n', 1, '2021-05-08 09:06:26'),
-(9, 23, 16, 'Hi I want to rent a couch from you', 1, '2021-05-08 09:06:36');
 
 -- --------------------------------------------------------
 
@@ -127,13 +129,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `name`, `role_id`, `password`, `is_online`, `phone`, `address`, `city`, `state`, `country`, `status`, `created_on`) VALUES
-(6, 'admin', 'admin@admin.com', 'Admin', 1, '$2y$10$4gc.hzRTtrDoM2spJ9lzYuSg3ko5qfc4HcoUYqQ9NKN4yd4VjUgCq', 1, NULL, NULL, NULL, NULL, NULL, 1, '2021-05-08 10:04:44'),
-(16, 'traveller', 'user@traveller.com', 'Saif Ijaz', 2, '$2y$10$8eJz89P1EkK1j.neZQV1A./7VUl.0ppsDKoJeRFcPVrF3dfUkw8zq', 0, NULL, NULL, NULL, NULL, NULL, 1, '2021-05-08 10:05:04'),
-(23, 'Host', 'user@host.com', 'Hamza Bhatti', 3, '$2y$10$FX0geObdEQgPLZikjcMRFushBvI3M2sUXu8NlQzbIiJjI42PlCkei', 0, '03330952454', 'Abcd Street', 'Jhelum', 'Punjab', 'Pakistan', 1, '2021-05-08 10:04:39');
+(6, 'admin', 'admin@admin.com', 'Admin', 1, '$2y$10$4gc.hzRTtrDoM2spJ9lzYuSg3ko5qfc4HcoUYqQ9NKN4yd4VjUgCq', 0, NULL, NULL, NULL, NULL, NULL, 1, '2021-05-08 18:53:58'),
+(16, 'traveller', 'user@traveller.com', 'Saif Ijaz', 2, '$2y$10$8eJz89P1EkK1j.neZQV1A./7VUl.0ppsDKoJeRFcPVrF3dfUkw8zq', 1, NULL, NULL, NULL, NULL, NULL, 1, '2021-05-08 18:54:09'),
+(23, 'Host', 'user@host.com', 'Hamza Bhatti', 3, '$2y$10$FX0geObdEQgPLZikjcMRFushBvI3M2sUXu8NlQzbIiJjI42PlCkei', 0, '03330952454', 'Abcd Street', 'Jhelum', 'Punjab', 'Pakistan', 1, '2021-05-08 18:54:05');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `couches`
@@ -172,16 +180,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `couches`
 --
 ALTER TABLE `couches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `couch_images`
 --
 ALTER TABLE `couch_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `messages`

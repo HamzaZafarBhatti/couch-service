@@ -36,6 +36,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
+                                                    <th>Title</th>
                                                     <th>Available</th>
                                                     <th>Address</th>
                                                     <th>City</th>
@@ -47,6 +48,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <th>#</th>
+                                                    <th>Title</th>
                                                     <th>Available</th>
                                                     <th>Address</th>
                                                     <th>City</th>
@@ -60,6 +62,7 @@
                                                 <?php foreach ($couches as $row) : ?>
                                                     <tr>
                                                         <td><?php echo $row['id']; ?></td>
+                                                        <td><?php echo $row['title']; ?></td>
                                                         <td>
                                                             <?php if ($row['is_available']) : ?>
                                                                 <span class="badge badge-success">Available</span>

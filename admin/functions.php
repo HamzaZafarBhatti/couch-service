@@ -50,6 +50,14 @@ function get_all_couch($connect)
     return $result ?? false;
 }
 
+function number_couches($connect)
+{
+    $sql = 'SELECT * FROM couches WHERE is_available = 1';
+    $result = mysqli_query($connect, $sql);
+    $total = mysqli_num_rows($result);
+    return $total;
+}
+
 function get_couch_by_id($connect, $id)
 {
     $sql = "SELECT * FROM couches WHERE id = '$id'";
@@ -58,11 +66,41 @@ function get_couch_by_id($connect, $id)
     return $couch ?? false;
 }
 
-function get_couch_images($connect, $id)
+function get_filtered_couches($connect, $data)
 {
-    $sql = "SELECT * FROM couch_images where couch_id='$id'";
+    $is_available = $data['is_available'];
+    $wheres = " WHERE is_available = $is_available";
+    if(isset($data['city'])){
+        $city = $data['city'];
+        $wheres .= " AND city LIKE %$city%";
+    }
+    if(isset($data['country'])){
+        $country = $data['country'];
+        $wheres .= " AND country LIKE %$country%";
+    }
+    if(isset($data['search'])){
+        $search = $data['search'];
+        $wheres .= " AND title LIKE %$search%";
+    }
+
+    $sql = "SELECT * FROM couches $wheres";
     $result = mysqli_query($connect, $sql);
     return $result ?? false;
+}
+
+function get_couch_images($connect, $id)
+{
+    $sql = "SELECT * FROM couch_images WHERE couch_id='$id'";
+    $result = mysqli_query($connect, $sql);
+    return $result ?? false;
+}
+
+function get_single_couch_image($connect, $id)
+{
+    $sql = "SELECT * FROM couch_images WHERE couch_id='$id' limit 1";
+    $result = mysqli_query($connect, $sql);
+    $couch_image = mysqli_fetch_array($result);
+    return $couch_image ?? false;
 }
 
 function delete_couch_image($connect, $id)
@@ -74,7 +112,7 @@ function delete_couch_image($connect, $id)
 
 function delete_couch($connect, $id)
 {
-    $sql = "DELETE FROM couches where id='$id'";
+    $sql = "DELETE FROM couches WHERE id='$id'";
     $result = mysqli_query($connect, $sql);
     return $result ?? false;
 }
@@ -98,7 +136,7 @@ function get_hosts_and_travellers($connect)
 
 function number_users($connect)
 {
-    $sql = 'SELECT * FROM users';
+    $sql = 'SELECT * FROM users WHERE role_id != 1';
     $result = mysqli_query($connect, $sql);
     $total = mysqli_num_rows($result);
     return $total;

@@ -25,7 +25,7 @@ if (isset($_SESSION['userid'])) {
 	// $quotes_total = number_quotes($connection);
 	// $bodyparts_total = number_bodyparts($connection);
 	// $equipments_total = number_equipments($connection);
-	// $categories_total = number_categories($connection);
+	$total_couches = number_couches($connection);
 	$total_users = number_users($connection);
 
 	$title_page = 'Dashboard';

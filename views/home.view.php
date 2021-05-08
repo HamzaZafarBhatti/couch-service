@@ -17,7 +17,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                    <!-- <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                         <div class="block counter-block mb-4">
                             <div class="value"><?php echo $total_users; ?></div>
                             <i class="dripicons-user i-icon"></i>
@@ -27,9 +27,9 @@
 
                     <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                         <div class="block counter-block mb-4">
-                            <div class="value"><?php echo $workouts_total ?? '' ?></div>
+                            <div class="value"><?php echo $total_couches ?? '' ?></div>
                             <i class="dripicons-to-do i-icon"></i>
-                            <p class="label">Workouts</p>
+                            <p class="label">Couches</p>
                         </div>
                     </div>
 
@@ -318,9 +318,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
+        </div>
+    </div>
 
 </section>

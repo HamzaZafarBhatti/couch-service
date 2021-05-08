@@ -20,18 +20,14 @@
                                         <div class="block col-md-12" style="padding-bottom: 35px">
                                             <div class="row">
                                                 <div class="col-6">
+                                                    <label class="control-label">Title</label>
+                                                    <input type="text" value="" placeholder="Title" name="title" id="title" class="form-control">
                                                     <label class="control-label">Address</label>
                                                     <input type="text" value="" placeholder="Address" name="address" id="address" class="form-control">
-                                                </div>
-                                                <div class="col-3">
                                                     <label class="control-label">City</label>
                                                     <input type="text" value="" placeholder="City" name="city" id="city" class="form-control">
-                                                </div>
-                                                <div class="col-3">
                                                     <label class="control-label">Country</label>
                                                     <input type="text" value="" placeholder="Country" name="country" id="country" class="form-control">
-                                                </div>
-                                                <div class="col-6">
                                                     <label class="control-label">Available</label>
                                                     <select name="is_available" id="is_available" class="form-control">
                                                         <option value="1">Yes</option>
@@ -70,6 +66,9 @@
         });
         var validator = $('#needs-validation').validate({
             rules: {
+                title: {
+                    required: true
+                },
                 address: {
                     required: true
                 },
@@ -84,6 +83,9 @@
                 },
             },
             messages: {
+                title: {
+                    required: "Title is required field"
+                },
                 address: {
                     required: "Address is required field"
                 },
