@@ -26,7 +26,7 @@
                 <ul class="sub-menu">
 
                     <li>
-                        <a href="../controller/couch.php">
+                        <a href="../controller/couches.php">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
                             <span class="title">Show All</span>
                         </a>
@@ -40,6 +40,12 @@
                     </li>
 
                 </ul>
+            </li>
+            <li>
+                <a href="../controller/messages.php">
+                    <span class="icon-thumbnail"><i class="dripicons-message"></i></span>
+                    <span class="title">Messages</span>
+                </a>
             </li>
 
             <li>

@@ -9,7 +9,7 @@ require '../admin/config.php';
 require '../admin/functions.php';
 require '../admin/connect_db.php';
 
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['userid'])) {
 	header('Location: ' . SITE_URL . '/controller/home.php');
 }
 

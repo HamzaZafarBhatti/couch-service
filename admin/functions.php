@@ -74,6 +74,13 @@ function get_all_users($connect)
     return $result ?? false;
 }
 
+function get_hosts_and_travellers($connect)
+{
+    $user_id = $_SESSION['userid'];
+    $sql = "SELECT * FROM users WHERE role_id != 1 AND id != '$user_id'";
+    $result = mysqli_query($connect, $sql);
+    return $result ?? false;
+}
 
 function number_users($connect)
 {
@@ -174,4 +181,42 @@ function number_categories($connect)
     // $total = count($total_numbers);
     // return $total;
 
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////// MESSAGING
+
+function fetch_user_chat_history($connect, $from_user_id, $to_user_id)
+{
+    $sql = "SELECT * FROM messages WHERE (from_user_id = '" . $from_user_id . "' AND to_user_id = '" . $to_user_id . "') OR (from_user_id = '" . $to_user_id . "' AND to_user_id = '" . $from_user_id . "') ORDER BY timestamp ASC";
+    $result = mysqli_query($connect, $sql);
+    $output = '<ul class="list-unstyled">';
+    foreach ($result as $row) {
+        $user_name = '';
+        if ($row["from_user_id"] == $from_user_id) {
+            $user_name = '<b class="text-success">You</b>';
+        } else {
+            $user_name = '<b class="text-danger">' . get_user_name($row['from_user_id'], $connect) . '</b>';
+        }
+        $output .= '
+            <li style="border-bottom:1px dotted #ccc">
+            <p>' . $user_name . ' - ' . $row["message"] . '
+                <div align="right">
+                - <small><em>' . $row['timestamp'] . '</em></small>
+                </div>
+            </p>
+            </li>
+            ';
+    }
+    $output .= '</ul>';
+    return $output;
+}
+
+function get_user_name($id, $connect)
+{
+    $sql = "SELECT name FROM users WHERE id = '$id'";
+    $result = mysqli_query($connect, $sql);
+    foreach ($result as $row) {
+        return $row['name'];
+    }
 }

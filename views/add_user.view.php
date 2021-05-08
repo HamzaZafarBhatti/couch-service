@@ -96,7 +96,7 @@
                     minlength: "Password should be at least 6 characters"
                 },
                 address: {
-                    required: "Confirm Password is required field",
+                    required: "Address is required field",
                 },
             },
             errorPlacement: function(error, element) {

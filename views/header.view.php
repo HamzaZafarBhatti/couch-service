@@ -8,6 +8,7 @@
     <link href="../assets/images/favicon.png" rel="shortcut icon">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/plugins/customScroll/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="../assets/icons/simple-line/css/simple-line-icons.css">
     <link rel="stylesheet" href="../assets/icons/dripicons/dripicons.css">
     <link rel="stylesheet" href="../assets/icons/fontawesome/css/font-awesome.min.css">
@@ -22,12 +23,13 @@
     <link rel="stylesheet" href="../assets/css/jquery.mswitch.css">
     <link rel="stylesheet" href="../assets/css/custom.css">
     <script src="../assets/js/jquery-3.1.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
     <script src="../assets/js/sweetalert.js"></script>
     <script src="../assets/js/fileuploader.min.js"></script>
     <script src="../assets/js/jquery.uploadPreview.js"></script>
     <!-- <script src="../assets/plugins/tinymce/tinymce.min.js"></script> -->
     <script src="../assets/js/jquery.mswitch.js"></script>
-    <script src="../assets/js/header.js"></script>
+    <!-- <script src="../assets/js/header.js"></script> -->
 
 </head>
 <body>

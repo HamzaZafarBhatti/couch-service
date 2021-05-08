@@ -4,7 +4,8 @@
 
 /* URL PROJECT */
 
-define ('SITE_URL', 'http://localhost/couch-service');
+// define ('SITE_URL', 'http://localhost/couch-service');
+define ('SITE_URL', 'http://localhost/PHP/couch-service');
 
 /* DATABASE CONFIGURATION */
 
